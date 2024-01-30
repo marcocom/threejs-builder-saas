@@ -1,0 +1,105 @@
+@use "sass:math";
+
+@import 'vars';
+@import 'breakpoints';
+
+// columns mixin
+@mixin col($name: '') {
+    @for $i from 1 through $flexgrid-nbcols {
+        &.flexcol--#{$i}#{$name} {
+            flex-basis: math.div(100%, $flexgrid-nbcols) * $i;
+            max-width: math.div(100%, $flexgrid-nbcols) * $i;
+        }
+    }
+}
+
+// grid
+.#{$flexgrid-prefix}flexrow#{$flexgrid-suffix} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: calc(100% + #{$flexgrid-gutter});
+    margin: 0 -#{$flexgrid-gutter * 0.5};
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+
+    &--nogutter {
+        width: 100%;
+        margin: 0;
+
+        .flexcol {
+            padding: 0;
+        }
+    }
+
+    .flexcol {
+        padding: 0 #{$flexgrid-gutter * 0.5};
+        flex: 1;
+        flex-basis: 100%;
+        max-width: 100%;
+
+        @include col;
+
+        @include mobile-only {
+            @include col('-m-o');
+        }
+
+        @include mobile-portrait-only {
+            @include col('-mp-o');
+        }
+
+        @include mobile-landscape-only {
+            @include col('-ml-o');
+        }
+
+        @include breakpoint-tablet {
+            @include col('-t');
+        }
+
+        @include tablet-only {
+            @include col('-t-o');
+        }
+
+        @include breakpoint-tablet-portrait {
+            @include col('-tp');
+        }
+
+        @include tablet-portrait-only {
+            @include col('-tp-o');
+        }
+
+        @include breakpoint-tablet-landscape {
+            @include col('-tl');
+        }
+
+        @include tablet-landscape-only {
+            @include col('-tl-o');
+        }
+
+        @include breakpoint-laptop {
+            @include col('-l');
+        }
+
+        @include laptop-only {
+            @include col('-l-o');
+        }
+
+        @include breakpoint-desktop {
+            @include col('-d');
+        }
+
+        @include desktop-only {
+            @include col('-d-o');
+        }
+    }
+
+    .break {
+        flex-basis: 100%;
+        height: 0;
+        font-size: 0;
+    }
+}

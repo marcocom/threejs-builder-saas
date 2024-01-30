@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type='text/javascript'>
+      const colors = ["rgb(150, 226, 221)", "rgb(255, 194, 209)", "rgb(101, 227, 103)", "rgb(255, 203, 63)", "rgb(248, 125, 123)", "rgb(94, 214, 253)", "rgb(58, 144, 179)", "rgb(255, 189, 113)", "rgb(9, 204, 189)", "rgb(120, 200, 151)", "rgb(191, 131, 193)", "rgb(247, 5, 114)"];
+
+      const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
+
+      const container = document.createElement('div');
+      container.style.display = 'flex';
+      container.style.flexWrap = 'wrap';
+
+      [...colors].forEach((color) => {
+        const div = document.createElement('div');
+
+        div.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const i = Array.prototype.indexOf.call(div.parentNode.children, div);
+          colors.splice(i, 1);
+          console.log(shuffleArray(colors));
+          return false;
+        });
+
+        div.style.backgroundColor = color;
+        div.style.width = '80px';
+        div.style.height = '80px';
+        div.style.margin = '8px';
+        div.style.color = '#fff';
+        div.textContent = color;
+
+        container.appendChild(div);
+      });
+
+      window.addEventListener('click', () => {
+        shuffleArray(colors);
+        console.log('shuffled array');
+        console.log(colors);
+      });
+
+      document.body.appendChild(container);
+    </script>
+  </body>
+</html>

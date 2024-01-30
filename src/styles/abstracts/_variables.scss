@@ -1,0 +1,34 @@
+@import '../base/vars.scss';
+@import '../base/breakpoints.scss';
+
+
+$flexgrid-breakpoint-tablet: 600px !default;
+$flexgrid-breakpoint-laptop: 992px !default;
+$flexgrid-breakpoint-desktop: 1200px !default;
+
+$flexgrid-prefix: '' !default;
+$flexgrid-suffix: '' !default;
+$flexgrid-nbcols: 24 !default;
+$flexgrid-gutter: 16px !default;
+$font: 'Nunito', Arial, sans-serif;
+
+$debug-row: rgba(20, 20, 20, 0.4);
+$debug-col: rgba($debug-row, 0.4);
+
+$color-orange : #EF7254;
+$color-pearl : #FDFFF9;
+$color-glow : #6BFFCA;
+$color-swamp : #0B0D0C;
+$color-green: #02A676;
+$color-red: #ff3131;
+$color-yellow : #F2B134;
+$color-emerald: #014751;
+$color-ghost: #ffffff10;
+
+$color-bronze : #19bcbe;
+$color-gold : #FFB604;
+$color-diamond : #8BB7BF;
+
+$color-theme : $color-pearl;
+
+$gradient : radial-gradient(80.12% 93.35% at 38.99% -7.51%, #254E4E 0%, #0B0D0C 100%);

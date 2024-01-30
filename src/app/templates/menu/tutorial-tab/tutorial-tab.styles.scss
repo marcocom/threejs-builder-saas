@@ -1,0 +1,75 @@
+//removing slick-carousel because its bloated AF. way too much overkill for this
+//@import '~slick-carousel/slick/slick.css';
+//@import '~slick-carousel/slick/slick-theme.css';
+
+.tutorial-keys {
+  display: flex;
+  flex-direction: column;
+}
+
+.slick-dots {
+  top:  100%;
+  bottom: initial;
+
+  li {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem;
+
+    &.slick-active {
+      button:before {
+        background: $color-theme;
+      }
+    }
+
+    button {
+      position: relative;
+      width: inherit;
+      height: inherit;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: calc((2rem -  0.75rem) / 2);
+        left: calc((2rem - 0.75rem) / 2);
+        width: 0.75rem;
+        height: 0.75rem;
+        background: $color-pearl;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.slick-slider {
+  .slick-arrow {
+    z-index: 10;
+    top: 100%;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    transform: none;
+
+    &:before {
+      color: $color-pearl;
+    }
+
+    &.slick-prev {
+      left: 0;
+    }
+    &.slick-next {
+      right: 0;
+    }
+  }
+}
+
+.voice-command {
+  display: block;
+  border-radius:  3px;
+  padding: 0 0.65rem;
+  background: transparent;
+  border: 1px solid $color-pearl;
+  color: $color-pearl;
+  font-size: 1rem;
+  text-transform: uppercase;
+}

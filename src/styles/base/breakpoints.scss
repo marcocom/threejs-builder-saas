@@ -1,0 +1,55 @@
+// Target a specific device
+
+@mixin mobile-only {
+    @media only screen and (max-device-width: #{$flexgrid-breakpoint-tablet - 1px}) { @content; }
+}
+
+@mixin mobile-portrait-only {
+    @media only screen and (max-device-width: #{$flexgrid-breakpoint-tablet - 1px}) and (orientation: portrait) { @content; }
+}
+
+@mixin mobile-landscape-only {
+    @media only screen and (max-device-width: #{$flexgrid-breakpoint-tablet - 1px}) and (orientation: landscape) { @content; }
+}
+
+@mixin tablet-only {
+    @media only screen and (min-device-width: $flexgrid-breakpoint-tablet) and (max-device-width: #{$flexgrid-breakpoint-laptop - 1px}) { @content; }
+}
+
+@mixin tablet-portrait-only {
+    @media only screen and (min-device-width: $flexgrid-breakpoint-tablet) and (max-device-width: #{$flexgrid-breakpoint-laptop - 1px}) and (orientation: portrait) { @content; }
+}
+
+@mixin tablet-landscape-only {
+    @media only screen and (min-device-width: $flexgrid-breakpoint-tablet) and (max-device-width: #{$flexgrid-breakpoint-laptop - 1px}) and (orientation: landscape) { @content; }
+}
+
+@mixin laptop-only {
+    @media only screen and (min-device-width: $flexgrid-breakpoint-laptop) and (max-device-width: #{$flexgrid-breakpoint-desktop - 1px}) { @content; }
+}
+
+@mixin desktop-only {
+    @media only screen and (min-device-width: $flexgrid-breakpoint-desktop) { @content; }
+}
+
+// Breakpoints
+
+@mixin breakpoint-tablet {
+    @media only screen and (min-width: $flexgrid-breakpoint-tablet) { @content; }
+}
+
+@mixin breakpoint-tablet-portrait {
+    @media only screen and (min-width: $flexgrid-breakpoint-tablet) and (orientation: portrait) { @content; }
+}
+
+@mixin breakpoint-tablet-landscape {
+    @media only screen and (min-width: $flexgrid-breakpoint-tablet) and (orientation: landscape) { @content; }
+}
+
+@mixin breakpoint-laptop {
+    @media only screen and (min-width: $flexgrid-breakpoint-laptop) { @content; }
+}
+
+@mixin breakpoint-desktop {
+    @media only screen and (min-width: $flexgrid-breakpoint-desktop) { @content; }
+}
