@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "rootDir": "src",
+    "esModuleInterop": true,
+    "typeRoots": ["./src/typings/", "../src/typings/", "./node_modules/@types/", "./node_modules/@types/"],
+    "lib": ["dom", "es2017", "es6", "es7"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

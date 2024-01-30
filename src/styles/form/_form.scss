@@ -1,0 +1,115 @@
+.form {
+  ::-webkit-input-placeholder {
+    color: $color-pearl;
+  }
+  ::-moz-placeholder {
+    color: $color-pearl;
+  }
+  :-ms-input-placeholder {
+    color: $color-pearl;
+  }
+  :-moz-placeholder {
+    color: $color-pearl;
+  }
+
+  &__group {
+
+  }
+
+  &__label {
+    width: 100%;
+    display: block;
+    color: rgba($color-pearl, .5);
+    font-size: 1.0rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    text-transform: none;
+  }
+
+  &__element {
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 0 1rem;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    margin: 0;
+    height: 2.75rem;
+    line-height: calc(2.75rem - 2px);
+    border: 1px solid rgba($color-pearl, 0.5);
+    font-size: 1.0rem;
+    font-weight: 300;
+    color: rgba($color-pearl, .5);
+    font-family: $font;
+    border-radius: none;
+
+    &--rounded {
+      border-radius: 500px;
+    }
+  }
+
+  textarea.form__element {
+    width: 100%;
+    height: auto;
+    resize: none;
+    padding: 0rem 1rem;
+    line-height: calc(1.75rem - 2px);
+  }
+
+  select.form__element option {
+    font-size: 1rem;
+    background: rgba($color-pearl, 0.05);
+  }
+
+  input[type=radio].form__element {
+    display: none;
+
+    & + label {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: none;
+      padding: 0 1rem;
+      height: 2.75rem;
+      line-height: calc(2.75rem - 2px);
+      text-transform: uppercase;
+      font-family: $font;
+      font-size: 1.0rem;
+      font-weight: 500;
+      letter-spacing: 0.15rem;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: rgba($color-pearl, 0.25);
+      box-shadow: none;
+      cursor: pointer;
+      transition: all ease .4s;
+    }
+
+    &--rounded + label {
+      border-radius: 500px;
+    }
+
+    &:disabled + label {
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    &:checked + label {
+      background: rgba($color-pearl, .15);
+      background-blend-mode: COLOR_DODGE, NORMAL;
+      backdrop-filter: 0px;
+      border: 0px solid rgba($color-pearl, .15);
+      color: $color-pearl;
+    }
+
+    &:not(:checked) + label:hover {
+      background: rgba($color-pearl, 0.15);
+      border-color: transparent;
+      transition: background ease .4s, color ease .4s, border-color ease .4s;
+      color: rgba($color-pearl, 1.0)
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.ui {
+  min-height:100vh;
+
+  @include breakpoint-laptop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__state {
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: inherit;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__notifications {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 150;
+    width: 100%;
+
+    @include breakpoint-tablet {
+      width: auto;
+    }
+  }
+}
